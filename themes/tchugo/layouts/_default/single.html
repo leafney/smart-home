@@ -1,0 +1,31 @@
+{{ define "main" }}
+
+<div class="blogdetail">
+  <header>
+    <h2>{{ .Title }}</h2>
+    {{ if and .Date (eq .Type "post")}}
+    <time datetime="{{ .Date.Format " 2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time>
+    <hr class="break-line">
+    {{ end }}
+  </header>
+
+  <div class="blogcontent">
+    {{ .Content }}
+  </div>
+
+  {{ if ne .Type "extend" }}
+
+  <footer>
+    <hr class="break-line">
+    <div class="license">
+      <p>除特别注明外，所有文章均采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" target="_blank">Creative
+          Commons BY-NC-ND 4.0（自由转载-保持署名-非商用-禁止演绎）协议</a>发布。</p>
+    </div>
+    <hr class="break-line">
+    {{ partial "gads.html" . }}
+  </footer>
+
+  {{ end }}
+
+</div>
+{{ end }}

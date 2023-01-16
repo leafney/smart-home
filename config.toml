@@ -1,3 +1,42 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://smarthome.itfanr.cc/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+
+title = "我的智能家居探索之路"
+
+theme = "tchugo"
+
+publishDir = "public"
+disableKinds = ["taxonomy", "term"]
+
+[params]
+  author = "leafney"
+  lazyImage = true
+  slogan = "科技让生活更加舒适"
+  description = "我的智能家居探索之路，在不断的学习和实践中逐步搭建一套人性化的智能家居系统。分享过程中的所学，所思，所想，所玩。"
+  keywords = "智能家居, HomeAssistant, Node-Red, 米家, Aqara, Homekit, HACS, Github"
+
+[menu]
+  [[menu.main]]
+  name = "关于"
+  url = "/about"
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "github"
+    tabWidth = 2
+  [markup.goldmark.renderer]
+    unsafe = true
+[blackfriday]
+  taskLists = true
+  angledQuotes = true
+  fractions = true
+  plainIDAnchors = true
+  tabSizeDefault = 4
+  extensions = ["hardLineBreak", "tables", "noEmptyLineBeforeBlock", "definitionLists"]
